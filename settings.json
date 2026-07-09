@@ -1,12 +1,12 @@
 {
-  "name": "AFK Bot",
+  "name": "VextuBot2",
   "bot-account": {
-    "username": "Slobot00",
+    "username": "VextuBot2",
     "password": "",
     "type": "offline"
   },
   "server": {
-    "ip": "slobtest1.aternos.me",
+    "ip": "mc.realslow.site",
     "port": 27586,
     "version": "",
     "try-creative": false
