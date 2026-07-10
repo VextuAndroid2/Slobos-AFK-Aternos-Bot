@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body class="bg-gray-900 text-white p-8">
+    <h1 class="text-2xl mb-4">Panel BotAfk</h1>
+    <div class="grid grid-cols-2 gap-4">
+        <input id="host" class="bg-gray-800 p-2" placeholder="Host">
+        <input id="port" class="bg-gray-800 p-2" placeholder="Puerto">
+        <input id="username" class="bg-gray-800 p-2" placeholder="Nombre">
+        <button onclick="iniciar()" class="bg-blue-600 p-2">Iniciar Bot</button>
+    </div>
+    <div id="logs" class="mt-4 h-64 bg-black p-4 overflow-y-scroll border border-gray-700"></div>
+    <input id="cmd" class="w-full bg-gray-800 p-2 mt-2" placeholder="Comando...">
+    <button onclick="enviar()" class="w-full bg-green-600 mt-2">Enviar</button>
+
+    <script>
+        const socket = io();
+        function iniciar() {
+            socket.emit('iniciar', { 
+                host: document.getElementById('host').value,
+                port: document.getElementById('port').value,
+                username: document.getElementById('username').value
+            });
+        }
+        function enviar() { socket.emit('comando', document.getElementById('cmd').value); }
+        socket.on('log', (msg) => {
+            const logs = document.getElementById('logs');
+            logs.innerHTML += `<div>${msg}</div>`;
+        });
+    </script>
+</body>
+</html>
