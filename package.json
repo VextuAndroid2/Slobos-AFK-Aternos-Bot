@@ -1,14 +1,12 @@
 {
-  "name": "bot-afk",
+  "name": "bot-afk-pro",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
   "dependencies": {
-    "mineflayer": "latest",
-    "mineflayer-pathfinder": "latest",
-    "minecraft-data": "latest",
-    "debug": "latest"
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "mineflayer": "^4.24.0",
+    "mineflayer-pathfinder": "^2.4.5",
+    "minecraft-data": "^3.58.0"
   }
 }
