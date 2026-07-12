@@ -4,7 +4,7 @@ const { pathfinder, Movements, goals } = require("mineflayer-pathfinder");
 const bot = mineflayer.createBot({
     host: "mc.realslow.site",
     port: 50526,
-    username: "BotAfk2",
+    username: "BotAfk",
     version: "1.20.1",
     checkTimeoutInterval: 60000
 });
@@ -48,3 +48,4 @@ function caminarEnCírculos() {
 
 bot.on("error", (err) => console.log("ERROR:", err.message));
 bot.on("kicked", (reason) => console.log("KICK:", reason));
+
